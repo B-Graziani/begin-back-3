@@ -1,9 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<p>
+<h1>
   <strong>Name:</strong>
   <%= @restaurant.name %>
-</p>
+</h1>
 
 <p>
   <strong>Address:</strong>
@@ -15,6 +15,22 @@
   <%= @restaurant.stars %>
 </p>
 
+<h2>Reviews</h2>
+<ul>
+  <% @restaurant.reviews.each do |review| %>
+  <li><%= review.content %></li>
+  <li><%= review.rating %></li>
+  <%= link_to "delete", review_path(review),
+  method: :delete,
+  data: { confirm: "are you sure?"} %>
+  <% end %>
+</ul>
+
+
+<%= link_to " leave a review" , new_restaurant_review_path(@restaurant) %>
+<br>
 <%= link_to "chef" , chef_restaurant_path(@restaurant) %>
+<br>
 <%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
+<br>
 <%= link_to 'Back', restaurants_path %>
