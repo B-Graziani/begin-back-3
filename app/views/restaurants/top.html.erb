@@ -1,0 +1,10 @@
+<h1>Best restaurants</h1>
+<ol>
+  <% @restaurants.each do |restaurant| %>
+  <li>
+    <%= restaurant.name %>
+    <%= link_to "show", restaurant_path(restaurant) %>
+  </li>
+  <% end %>
+</ol>
+

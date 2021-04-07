@@ -10,6 +10,9 @@ class RestaurantsController < ApplicationController
   def show
   end
 
+  def top
+    @restaurants = Restaurant.where(stars:5)
+  end
   # GET /restaurants/new
   def new
     @restaurant = Restaurant.new
