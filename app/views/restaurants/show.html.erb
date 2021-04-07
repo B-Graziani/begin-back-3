@@ -21,8 +21,8 @@
   <li><%= review.content %></li>
   <li><%= review.rating %></li>
   <%= link_to "delete", review_path(review),
-  method: :delete,
-  data: { confirm: "are you sure?"} %>
+    method: :delete,
+    data: { confirm: "really?"} %>
   <% end %>
 </ul>
 
